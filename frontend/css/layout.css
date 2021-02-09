@@ -1,0 +1,45 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container {
+    background-color: rgb(253, 236, 214);
+    display: grid;
+    grid-template-rows: 100px auto 100px;
+    margin: 0px auto;
+    max-width: 1000px;
+    min-height: 100vh;
+    min-width: 600px;
+    padding: 10px;
+    width: 90%;
+}
+.main-header{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.campus-list > .campus, 
+.campus-books > .book-title,
+.book-details > p,
+.author-name{
+    margin-top: 10px;
+}
+.campus-list {
+    display: flex;
+    flex-direction: column;
+}
+.campus-library{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+}
+.campus-books{
+    display: flex;
+    flex-direction: column;
+}
+.main-content>.book{
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+}

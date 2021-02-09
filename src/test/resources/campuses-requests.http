@@ -1,0 +1,32 @@
+### Get all campuses
+GET http://localhost:8080/api/campuses
+Accept: application/json
+
+### Get a campus with the given id.
+GET localhost:8080/api/campuses/1
+
+### Delete a campus with the given id.
+DELETE localhost:8080/api/campuses/1
+
+### Post a new campus resource.
+POST http://localhost:8080/api/campuses
+Content-Type: application/json
+
+{"location":"Dayton","techStack": "C#"}
+
+### Update a campus resource.
+PUT http://localhost:8080/api/campuses
+Content-Type: application/json
+
+{"id":1,"location": "remote","techStack": "Java"}
+
+### Update a campus's location property.
+PATCH http://localhost:8080/api/campuses/1/location
+
+Clintonville
+
+### Add a new book resource to the campus's books
+PATCH http://localhost:8080/api/campuses/1/books
+Content-Type: application/json
+
+{"title": "New Book","summary": "This is a sample book.","available": true,"authors": [{"name": "Sample Author"}, {"name": "Another Sample Author"}]}
