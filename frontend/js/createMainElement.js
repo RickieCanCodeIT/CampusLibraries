@@ -1,3 +1,5 @@
+import { displaySingleCampus } from "./displaySingleCampus.js";
+
 const createMainElement = function (campuses) {
   const mainElement = document.createElement("main");
   mainElement.classList.add("main-content");
@@ -11,9 +13,7 @@ const createMainElement = function (campuses) {
     const h2Element = document.createElement("h2");
     h2Element.classList.add("campus-location");
     h2Element.innerText = campus.location;
-    h2Element.addEventListener("click", () =>
-      alert(`h2 clicked, showing ${campus.location}'s books`)
-    );
+    h2Element.addEventListener("click", () => displaySingleCampus(campus));
     divElement.appendChild(h2Element);
 
     const h3Element = document.createElement("h3");
@@ -31,6 +31,7 @@ const createMainElement = function (campuses) {
 };
 
 export { createMainElement };
+
 /*
 
 <main class="main-content">
