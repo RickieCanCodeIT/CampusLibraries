@@ -30,7 +30,7 @@ public class Populator implements CommandLineRunner {
         campusStorage.saveCampus(cleveland);
         Campus moon = new Campus("THE MOON", "Ruby");
         campusStorage.saveCampus(moon);
-        Campus canada = new Campus("Canada", "Ruby");
+        Campus canada = new Campus("Italy", "Ruby");
         campusStorage.saveCampus(canada);
 
         Author kathySierra = new Author("Kathy Sierra");

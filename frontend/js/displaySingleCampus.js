@@ -1,7 +1,9 @@
-import { sampleJSON } from "./sampleJSON.js";
 import { createMainElement } from "./createMainElement.js";
 
-const displaySingleCampus = function (campus) {
+let currentJSON = "";
+
+const displaySingleCampus = function (campus, wholeJSON) {
+  currentJSON = wholeJSON;
   const mainContent = document.querySelector(".main-content");
   clearChildren(mainContent);
   const campusLibraryElement = document.createElement("section");
@@ -42,7 +44,7 @@ const displaySingleCampus = function (campus) {
 
   backToAllCampuses.addEventListener("click", () => {
     clearChildren(mainContent);
-    mainContent.appendChild(createMainElement(sampleJSON));
+    mainContent.appendChild(createMainElement(currentJSON));
   });
   campusLibraryElement.appendChild(backToAllCampuses);
 };

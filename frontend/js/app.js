@@ -3,17 +3,28 @@ import { createHeader } from "./Header.js";
 import { createMainElement } from "./createMainElement.js";
 import { createFooter } from "./Footer.js";
 
-const header = createHeader();
+const clearChildren = function (element) {
+  while (element.firstChild) {
+    element.removeChild(element.lastChild);
+  }
+};
+
+let header = createHeader();
 const container = document.querySelector(".container");
 container.prepend(header);
-//const main = createMainElement(sampleJSON);
+//let main = createMainElement(sampleJSON);
 //container.appendChild(main);
-const footer = createFooter();
+let footer = createFooter();
 container.appendChild(footer);
 
 const displayHomeView = function (campuses) {
-  const main = createMainElement(campuses);
+  clearChildren(container);
+  header = createHeader();
+  container.prepend(header);
+  let main = createMainElement(campuses);
   container.appendChild(main);
+  footer = createFooter();
+  container.appendChild(footer);
 };
 
 fetch("http://localhost:8080/api/campuses")

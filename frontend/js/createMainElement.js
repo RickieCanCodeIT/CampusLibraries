@@ -13,7 +13,9 @@ const createMainElement = function (campuses) {
     const h2Element = document.createElement("h2");
     h2Element.classList.add("campus-location");
     h2Element.innerText = campus.location;
-    h2Element.addEventListener("click", () => displaySingleCampus(campus));
+    h2Element.addEventListener("click", () =>
+      displaySingleCampus(campus, campuses)
+    );
     divElement.appendChild(h2Element);
 
     const h3Element = document.createElement("h3");
