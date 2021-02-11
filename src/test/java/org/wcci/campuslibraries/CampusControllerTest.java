@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.wcci.campuslibraries.controllers.CampusController;
+import org.wcci.campuslibraries.resources.Book;
 import org.wcci.campuslibraries.resources.Campus;
+import org.wcci.campuslibraries.storage.AuthorRepository;
+import org.wcci.campuslibraries.storage.BookRepository;
 import org.wcci.campuslibraries.storage.CampusStorage;
 
 import java.util.Collections;
@@ -20,12 +23,16 @@ public class CampusControllerTest {
 
 
     private CampusStorage campusStorage;
+    private BookRepository bookRepo;
+    private AuthorRepository authorRepo;
     private CampusController underTest;
 
     @BeforeEach
     void setUp() {
         campusStorage = mock(CampusStorage.class);
-        underTest = new CampusController(campusStorage);
+        bookRepo = mock(BookRepository.class);
+        authorRepo = mock(AuthorRepository.class);
+        underTest = new CampusController(campusStorage, bookRepo, authorRepo);
         when(campusStorage.retrieveAllCampuses()).thenReturn(Collections.singletonList(new Campus("Test Town", "FORTRAN")));
     }
 

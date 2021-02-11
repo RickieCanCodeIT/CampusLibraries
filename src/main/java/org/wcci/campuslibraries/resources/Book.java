@@ -33,6 +33,10 @@ public class Book {
         return campus;
     }
 
+    public void addCampus(Campus inCampus) {
+        campus = inCampus;
+    }
+
     public String getTitle() {
         return title;
     }

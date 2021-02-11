@@ -37,6 +37,7 @@ public class Campus {
         location = newLocation;
     }
 
+
     public String getTechStack() {
         return techStack;
     }
